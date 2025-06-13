@@ -2,146 +2,301 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EMEVE - Portafolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EMEVE - Portafolio de Fotografía</title>
   <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
     body {
-      margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
       background-color: #000;
       color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #f39c12;
     }
 
     header {
-      background-color: #fff;
+      background: #fff;
       color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 20px;
+      gap: 15px;
+    }
+    header img {
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    header .texts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.1;
+    }
+    header .texts h1 {
+      font-size: 2.8rem;
+      letter-spacing: 3px;
+    }
+    header .texts p {
+      font-size: 1rem;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    #contacto {
       text-align: center;
-      padding: 60px 20px 40px;
+      margin: 25px 0;
+      font-size: 1.6rem;
     }
 
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-      letter-spacing: 4px;
+    #categorias {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    #categorias ul {
+      list-style: none;
+    }
+    #categorias li {
+      font-size: 2rem;
+      font-weight: 700;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      transition: color 0.3s ease, font-size 0.3s ease;
+    }
+    #categorias li:hover {
+      color: #f39c12;
+      font-size: 2.3rem;
+    }
+    #categorias li .flecha {
+      transition: transform 0.3s ease;
+    }
+    #categorias li.activo .flecha {
+      transform: rotate(90deg);
     }
 
-    header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      color: #555;
-    }
-
-    .gallery {
+    .galeria {
+      background: #f5f0e6;
+      padding: 15px;
+      margin-bottom: 30px;
       column-count: 3;
       column-gap: 15px;
-      padding: 40px;
+      display: none;
     }
-
-    .gallery img {
+    .galeria img {
       width: 100%;
       margin-bottom: 15px;
       border-radius: 6px;
-      display: block;
+      transition: transform 0.3s ease;
+      cursor: pointer;
       break-inside: avoid;
-      object-fit: cover;
     }
-
-    footer {
-      background-color: #000;
-      padding: 30px 20px;
-      text-align: center;
-      font-size: 1rem;
-      color: #fff;
+    .galeria img:hover {
+      transform: scale(1.05);
     }
-
-    .contact a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 10px;
-      transition: color 0.3s ease;
-    }
-
-    .contact a:hover {
-      color: #ccc;
+    .galeria.activa {
+      display: block;
     }
 
     @media (max-width: 900px) {
-      .gallery {
+      .galeria {
         column-count: 2;
       }
     }
-
     @media (max-width: 600px) {
-      .gallery {
+      .galeria {
         column-count: 1;
       }
     }
   </style>
 </head>
 <body>
-  <header>
+
+<header>
+  <img src="imagenes/fotodeperfil.jpg" alt="Foto de perfil EMEVE" />
+  <div class="texts">
     <h1>EMEVE</h1>
     <p>PORTAFOLIO DE FOTOGRAFÍA</p>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <div class="gallery">
-      <!-- 46 FOTOS -->
-      <img src="imagenes/001.jpg" alt="Foto 1">
-      <img src="imagenes/002.jpg" alt="Foto 2">
-      <img src="imagenes/003.jpg" alt="Foto 3">
-      <img src="imagenes/035.jpg" alt="Foto 35">
-      <img src="imagenes/005.jpg" alt="Foto 5">
-      <img src="imagenes/006.jpg" alt="Foto 6">
-      <img src="imagenes/007.jpg" alt="Foto 7">
-      <img src="imagenes/008.jpg" alt="Foto 8">
-      <img src="imagenes/009.jpg" alt="Foto 9">
-      <img src="imagenes/010.jpg" alt="Foto 10">
-      <img src="imagenes/011.jpg" alt="Foto 11">
-      <img src="imagenes/012.jpg" alt="Foto 12">
-      <img src="imagenes/013.jpg" alt="Foto 13">
-      <img src="imagenes/014.jpg" alt="Foto 14">
-      <img src="imagenes/015.jpg" alt="Foto 15">
-      <img src="imagenes/016.jpg" alt="Foto 16">
-      <img src="imagenes/017.jpg" alt="Foto 17">
-      <img src="imagenes/004.jpg" alt="Foto 4">
-      <img src="imagenes/032.jpg" alt="Foto 32">
-      <img src="imagenes/019.jpg" alt="Foto 19">
-      <img src="imagenes/020.jpg" alt="Foto 20">
-      <img src="imagenes/021.jpg" alt="Foto 21">
-      <img src="imagenes/022.jpg" alt="Foto 22">
-      <img src="imagenes/024.jpg" alt="Foto 24">
-      <img src="imagenes/025.jpg" alt="Foto 25">
-      <img src="imagenes/026.jpg" alt="Foto 26">
-      <img src="imagenes/027.jpg" alt="Foto 27">
-      <img src="imagenes/028.jpg" alt="Foto 28">
-      <img src="imagenes/029.jpg" alt="Foto 29">
-      <img src="imagenes/030.jpg" alt="Foto 30">
-      <img src="imagenes/031.jpg" alt="Foto 31">
-      <img src="imagenes/033.jpg" alt="Foto 33">
-      <img src="imagenes/034.jpg" alt="Foto 34">
-      <img src="imagenes/018.jpg" alt="Foto 18">
-      <img src="imagenes/036.jpg" alt="Foto 36">
-      <img src="imagenes/037.jpg" alt="Foto 37">
-      <img src="imagenes/023.jpg" alt="Foto 23">
-      <img src="imagenes/038.jpg" alt="Foto 38">
-      <img src="imagenes/039.jpg" alt="Foto 39">
-      <img src="imagenes/040.jpg" alt="Foto 40">
-      <img src="imagenes/041.jpg" alt="Foto 41">
-      <img src="imagenes/042.jpg" alt="Foto 42">
-      <img src="imagenes/043.jpg" alt="Foto 43">
-      <img src="imagenes/044.jpg" alt="Foto 44">
-      <img src="imagenes/045.jpg" alt="Foto 45">
-      <img src="imagenes/046.jpg" alt="Foto 46">
-    </div>
-  </main>
+<section id="contacto">
+  Contacto:
+  <a href="https://instagram.com/emeve_off" target="_blank">@emeve_off</a> |
+  <a href="mailto:emeveoff@gmail.com">emeveoff@gmail.com</a>
+</section>
 
-  <footer>
-    <p>Contacto:</p>
-    <div class="contact">
-      <a href="https://instagram.com/emeve_off" target="_blank">@emeve_off</a> |
-      <a href="mailto:emeveoff@gmail.com">emeveoff@gmail.com</a>
-    </div>
-  </footer>
+<section id="categorias">
+  <ul>
+    <li data-galeria="restaurantes">Restaurantes / Bares <span class="flecha">&#9654;</span></li>
+    <li data-galeria="eventos">Eventos sociales / Conciertos <span class="flecha">&#9654;</span></li>
+    <li data-galeria="pasarelas">Pasarelas <span class="flecha">&#9654;</span></li>
+    <li data-galeria="retratos">Retratos <span class="flecha">&#9654;</span></li>
+    <li data-galeria="arte">Arte <span class="flecha">&#9654;</span></li>
+    <li data-galeria="fiestas">Fiestas infantiles <span class="flecha">&#9654;</span></li>
+  </ul>
+
+  <div id="restaurantes" class="galeria">
+      <img src="imagenes/restaurantes/001.jpg" alt="Foto 1">
+      <img src="imagenes/restaurantes/002.jpg" alt="Foto 2">
+      <img src="imagenes/restaurantes/003.jpg" alt="Foto 3">
+      <img src="imagenes/restaurantes/004.jpg" alt="Foto 4">
+      <img src="imagenes/restaurantes/005.jpg" alt="Foto 5">
+      <img src="imagenes/restaurantes/006.jpg" alt="Foto 6">
+      <img src="imagenes/restaurantes/007.jpg" alt="Foto 7">
+      <img src="imagenes/restaurantes/008.jpg" alt="Foto 8">
+      <img src="imagenes/restaurantes/009.jpg" alt="Foto 9">
+      <img src="imagenes/restaurantes/010.jpg" alt="Foto 10">
+      <img src="imagenes/restaurantes/011.jpg" alt="Foto 11">
+      <img src="imagenes/restaurantes/012.jpg" alt="Foto 12">
+      <img src="imagenes/restaurantes/013.jpg" alt="Foto 13">
+      <img src="imagenes/restaurantes/014.jpg" alt="Foto 14">
+      <img src="imagenes/restaurantes/015.jpg" alt="Foto 15">
+  </div>
+
+  <div id="eventos" class="galeria">
+      <img src="imagenes/eventos/001.jpg" alt="Foto 1">
+      <img src="imagenes/eventos/002.jpg" alt="Foto 2">
+      <img src="imagenes/eventos/003.jpg" alt="Foto 3">
+      <img src="imagenes/eventos/004.jpg" alt="Foto 4">
+      <img src="imagenes/eventos/005.jpg" alt="Foto 5">
+      <img src="imagenes/eventos/006.jpg" alt="Foto 6">
+      <img src="imagenes/eventos/007.jpg" alt="Foto 7">
+      <img src="imagenes/eventos/008.jpg" alt="Foto 8">
+      <img src="imagenes/eventos/009.jpg" alt="Foto 9">
+      <img src="imagenes/eventos/010.jpg" alt="Foto 10">
+      <img src="imagenes/eventos/011.jpg" alt="Foto 11">
+      <img src="imagenes/eventos/012.jpg" alt="Foto 12">
+      <img src="imagenes/eventos/013.jpg" alt="Foto 13">
+      <img src="imagenes/eventos/014.jpg" alt="Foto 14">
+      <img src="imagenes/eventos/015.jpg" alt="Foto 15">
+      <img src="imagenes/eventos/016.jpg" alt="Foto 16">
+      <img src="imagenes/eventos/017.jpg" alt="Foto 17">
+      <img src="imagenes/eventos/018.jpg" alt="Foto 18">
+      <img src="imagenes/eventos/019.jpg" alt="Foto 19">
+      <img src="imagenes/eventos/020.jpg" alt="Foto 20">
+      <img src="imagenes/eventos/021.jpg" alt="Foto 21">
+      <img src="imagenes/eventos/022.jpg" alt="Foto 22">
+      <img src="imagenes/eventos/023.jpg" alt="Foto 23">
+      <img src="imagenes/eventos/024.jpg" alt="Foto 24">
+      <img src="imagenes/eventos/025.jpg" alt="Foto 25">
+      <img src="imagenes/eventos/026.jpg" alt="Foto 26">
+      <img src="imagenes/eventos/027.jpg" alt="Foto 27">
+      <img src="imagenes/eventos/028.jpg" alt="Foto 28">
+      <img src="imagenes/eventos/029.jpg" alt="Foto 29">
+      <img src="imagenes/eventos/030.jpg" alt="Foto 30">
+      <img src="imagenes/eventos/031.jpg" alt="Foto 31">
+  </div>
+
+  <div id="pasarelas" class="galeria">
+      <img src="imagenes/pasarelas/001.jpg" alt="Foto 1">
+      <img src="imagenes/pasarelas/002.jpg" alt="Foto 2">
+      <img src="imagenes/pasarelas/003.jpg" alt="Foto 3">
+      <img src="imagenes/pasarelas/004.jpg" alt="Foto 4">
+      <img src="imagenes/pasarelas/005.jpg" alt="Foto 5">
+      <img src="imagenes/pasarelas/006.jpg" alt="Foto 6">
+      <img src="imagenes/pasarelas/007.jpg" alt="Foto 7">
+      <img src="imagenes/pasarelas/008.jpg" alt="Foto 8">
+  </div>
+
+  <div id="retratos" class="galeria">
+      <img src="imagenes/retratos/001.jpg" alt="Foto 1">
+      <img src="imagenes/retratos/002.jpg" alt="Foto 2">
+      <img src="imagenes/retratos/003.jpg" alt="Foto 3">
+      <img src="imagenes/retratos/004.jpg" alt="Foto 4">
+      <img src="imagenes/retratos/005.jpg" alt="Foto 5">
+      <img src="imagenes/retratos/006.jpg" alt="Foto 6">
+      <img src="imagenes/retratos/007.jpg" alt="Foto 7">
+      <img src="imagenes/retratos/008.jpg" alt="Foto 8">
+      <img src="imagenes/retratos/009.jpg" alt="Foto 9">
+      <img src="imagenes/retratos/010.jpg" alt="Foto 10">
+      <img src="imagenes/retratos/011.jpg" alt="Foto 11">
+      <img src="imagenes/retratos/012.jpg" alt="Foto 12">
+  </div>
+
+  <div id="arte" class="galeria">
+      <img src="imagenes/arte/001.jpg" alt="Foto 1">
+      <img src="imagenes/arte/002.jpg" alt="Foto 2">
+      <img src="imagenes/arte/003.jpg" alt="Foto 3">
+      <img src="imagenes/arte/004.jpg" alt="Foto 4">
+      <img src="imagenes/arte/005.jpg" alt="Foto 5">
+      <img src="imagenes/arte/006.jpg" alt="Foto 6">
+  </div>
+
+  <div id="fiestas" class="galeria">
+      <img src="imagenes/fiestas/001.jpg" alt="Foto 1">
+      <img src="imagenes/fiestas/002.jpg" alt="Foto 2">
+      <img src="imagenes/fiestas/003.jpg" alt="Foto 3">
+      <img src="imagenes/fiestas/004.jpg" alt="Foto 4">
+      <img src="imagenes/fiestas/005.jpg" alt="Foto 5">
+      <img src="imagenes/fiestas/006.jpg" alt="Foto 6">
+      <img src="imagenes/fiestas/007.jpg" alt="Foto 7">
+      <img src="imagenes/fiestas/008.jpg" alt="Foto 8">
+      <img src="imagenes/fiestas/009.jpg" alt="Foto 9">
+      <img src="imagenes/fiestas/010.jpg" alt="Foto 10">
+      <img src="imagenes/fiestas/011.jpg" alt="Foto 11">
+      <img src="imagenes/fiestas/012.jpg" alt="Foto 12">
+      <img src="imagenes/fiestas/013.jpg" alt="Foto 13">
+  </div>
+
+</section>
+
+<script>
+  const cantidadFotos = {
+    restaurantes: 15,
+    eventos: 31,
+    pasarelas: 8,
+    retratos: 12,
+    arte: 6,
+    fiestas: 13
+  };
+
+  function crearImagenes(idGaleria, cantidad) {
+    const galeria = document.getElementById(idGaleria);
+    for (let i = 1; i <= cantidad; i++) {
+      const img = document.createElement('img');
+      const num = i.toString().padStart(3, '0');
+      img.src = `imagenes/${idGaleria}/${num}.jpg`;
+      img.alt = `Foto ${num}`;
+      galeria.appendChild(img);
+    }
+  }
+
+  Object.entries(cantidadFotos).forEach(([nombre, cantidad]) => {
+    crearImagenes(nombre, cantidad);
+  });
+
+  const items = document.querySelectorAll('#categorias li');
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      const idGaleria = item.getAttribute('data-galeria');
+      const galeria = document.getElementById(idGaleria);
+      const estaActiva = galeria.classList.contains('activa');
+
+      document.querySelectorAll('.galeria').forEach(g => g.classList.remove('activa'));
+      items.forEach(i => i.classList.remove('activo'));
+
+      if (!estaActiva) {
+        galeria.classList.add('activa');
+        item.classList.add('activo');
+        galeria.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
